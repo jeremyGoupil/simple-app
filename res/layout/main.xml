@@ -3,11 +3,12 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-        >
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, ArollaMain"
-            />
-</LinearLayout>
 
+        >
+    <fr.arolla.core.gui.ActionBar
+            android:id="@+id/actionbar"
+            style="@style/ActionBar"
+            />
+    <ListView android:id="@+id/listFeed" android:layout_width="fill_parent"
+              android:layout_height="fill_parent"></ListView>
+</LinearLayout>

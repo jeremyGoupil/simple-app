@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">arolla</string>
+    <string name="actionbar_title">actionbar</string>
+    <string name="actionbar_activity_not_found">actionbar activity not found</string>
 </resources>
