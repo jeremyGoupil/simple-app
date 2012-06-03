@@ -1,1 +1,2 @@
 Réalisation de l'application arolla qui va comprendre un lecteur de flux RSS pour suivre en direct les actualités du site, les actualités du blog et enfin un formulaire de recherche de mission.
+Merci à thibault-koprowski.fr pour son super tuto pour l'implémentation d'un parser Sax.
