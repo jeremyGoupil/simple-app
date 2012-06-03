@@ -24,6 +24,11 @@
                 style="@style/ActionBarHomeLogo"
                 android:visibility="gone"
                 />
+        <TextView
+                android:id="@+id/actionbar_title"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                />
         <RelativeLayout
                 android:id="@+id/actionbar_home_bg"
                 android:layout_width="wrap_content"

@@ -13,7 +13,7 @@ import fr.arolla.core.gui.ActionBar;
 
 import java.util.ArrayList;
 
-public class ArollaMain extends Activity {
+public class ArollaBlogActivity extends Activity {
     /**
      * Called when the activity is first created.
      */
@@ -26,20 +26,17 @@ public class ArollaMain extends Activity {
 
         final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
         //actionBar.setHomeAction(new IntentAction(this, createIntent(this), R.drawable.ic_title_home_demo));
-        actionBar.setTitle("Site");
+        actionBar.setTitle("Blog");
 
 
         final ActionBar.Action otherAction = new ActionBar.IntentAction(this, createIntent(this), R.drawable.actionbar_btn_normal);
         actionBar.addAction(otherAction);
 
-        final ActionBar.Action mainAction = new ActionBar.IntentAction(this, createIntent(this), R.drawable.actionbar_btn_normal);
-        actionBar.addAction(mainAction);
-
         //url = new URL("http://thibault-koprowski.fr/feed");
         //url = new URL("http://www.arolla.fr/feed/");
         //url = new URL("http://www.arolla.fr/blog/feed/");
 
-        ArrayList<Feed> feeds = ContainerData.getFeeds("http://www.arolla.fr/feed/");
+        ArrayList<Feed> feeds = ContainerData.getFeeds("http://www.arolla.fr/blog/feed/");
         for (Feed feed : feeds) {
             Log.e("feedPlayer", feed.toString());
         }
@@ -49,7 +46,7 @@ public class ArollaMain extends Activity {
     }
 
     public Intent createIntent(Context context) {
-        Intent i = new Intent(context, ArollaBlogActivity.class);
+        Intent i = new Intent(context, ArollaMain.class);
         //this.startActivity(i);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return i;

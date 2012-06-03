@@ -34,6 +34,7 @@ public class ActionBar extends RelativeLayout implements View.OnClickListener {
         mBarView = (RelativeLayout) mInflater.inflate(R.layout.actionbar, null);
         addView(mBarView);
 
+        mTitleView = (TextView) mBarView.findViewById(R.id.actionbar_title);
         mLogoView = (ImageView) mBarView.findViewById(R.id.actionbar_home_logo);
         mHomeLayout = (RelativeLayout) mBarView.findViewById(R.id.actionbar_home_bg);
         mHomeBtn = (ImageButton) mBarView.findViewById(R.id.actionbar_home_btn);
