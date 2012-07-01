@@ -25,7 +25,6 @@ public class ArollaMain extends Activity {
         // creation d'une action bar tab pour la navigation entre les feeds du site du blog et du formulaire de recherche de poste.
 
         final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
-        //actionBar.setHomeAction(new IntentAction(this, createIntent(this), R.drawable.ic_title_home_demo));
         actionBar.setTitle("Site");
 
 
@@ -35,9 +34,6 @@ public class ArollaMain extends Activity {
         final ActionBar.Action mainAction = new ActionBar.IntentAction(this, createIntent(this), R.drawable.actionbar_btn_normal);
         actionBar.addAction(mainAction);
 
-        //url = new URL("http://thibault-koprowski.fr/feed");
-        //url = new URL("http://www.arolla.fr/feed/");
-        //url = new URL("http://www.arolla.fr/blog/feed/");
 
         ArrayList<Feed> feeds = ContainerData.getFeeds("http://www.arolla.fr/feed/");
         for (Feed feed : feeds) {
@@ -50,7 +46,6 @@ public class ArollaMain extends Activity {
 
     public Intent createIntent(Context context) {
         Intent i = new Intent(context, ArollaBlogActivity.class);
-        //this.startActivity(i);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return i;
     }

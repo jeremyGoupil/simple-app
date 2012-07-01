@@ -1,6 +1,5 @@
 package fr.arolla.core;
 
-import android.content.Context;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 
 public class ContainerData {
 
-    static public Context context;
 
     public ContainerData() {
 
@@ -35,7 +33,7 @@ public class ContainerData {
             e.printStackTrace();
         }
 
-        // On dÈfini l'url du fichier XML
+        // On défini l'url du fichier XML
         URL url = null;
         try {
 
@@ -45,15 +43,15 @@ public class ContainerData {
         }
 
         /*
-           * Le handler sera gestionnaire du fichier XML c'est ‡ dire que c'est lui qui sera chargÈ
-           * des opÈrations de parsing. On vera cette classe en dÈtails ci aprËs.
+           * Le handler sera gestionnaire du fichier XML c'est à dire que c'est lui qui sera chargé
+           * des opérations de parsing. On vera cette classe en détails ci après.
           */
         DefaultHandler handler = new ParserXMLHandler();
         try {
             // On parse le fichier XML
             parseur.parse(url.openConnection().getInputStream(), handler);
 
-            // On rÈcupËre directement la liste des feeds
+            // On récupère directement la liste des feeds
             feeds = ((ParserXMLHandler) handler).getData();
         } catch (SAXException e) {
             e.printStackTrace();

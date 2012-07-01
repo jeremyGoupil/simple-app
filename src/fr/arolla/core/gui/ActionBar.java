@@ -19,7 +19,6 @@ public class ActionBar extends RelativeLayout implements View.OnClickListener {
     private RelativeLayout mBarView;
     private ImageView mLogoView;
     private View mBackIndicator;
-    //private View mHomeView;
     private TextView mTitleView;
     private LinearLayout mActionsView;
     private ImageButton mHomeBtn;
@@ -267,11 +266,5 @@ public class ActionBar extends RelativeLayout implements View.OnClickListener {
         }
     }
 
-    /*
-    public static abstract class SearchAction extends AbstractAction {
-        public SearchAction() {
-            super(R.drawable.actionbar_search);
-        }
-    }
-    */
+
 }

@@ -21,13 +21,13 @@ public class ParserXMLHandler extends DefaultHandler {
     // Array list de feeds
     private ArrayList<Feed> feeds;
 
-    // Boolean permettant de savoir si nous sommes ‡ l'intÈrieur d'un item
+    // Boolean permettant de savoir si nous sommes à l'intèrieur d'un item
     private boolean inItem;
 
     // Feed courant
     private Feed currentFeed;
 
-    // Buffer permettant de contenir les donnÈes d'un tag XML
+    // Buffer permettant de contenir les données d'un tag XML
     private StringBuffer buffer;
 
     @Override
@@ -40,12 +40,12 @@ public class ParserXMLHandler extends DefaultHandler {
     }
 
 
-    // * Cette mÈthode est appelÈe par le parser une et une seule
-    // * fois au dÈmarrage de l'analyse de votre flux xml.
-    // * Elle est appelÈe avant toutes les autres mÈthodes de l'interface,
-    // * ‡ l'exception unique, Èvidemment, de la mÈthode setDocumentLocator.
-    // * Cet ÈvÈnement devrait vous permettre d'initialiser tout ce qui doit
-    // * l'Ítre avant ledÈbut du parcours du document.
+    // * Cette méthode est appelée par le parser une et une seule
+    // * fois au démarrage de l'analyse de votre flux xml.
+    // * Elle est appelée avant toutes les autres méthodes de l'interface,
+    // * à l'exception unique, évidemment, de la méthode setDocumentLocator.
+    // * Cet évènement devrait vous permettre d'initialiser tout ce qui doit
+    // * l'être avant le début du parcours du document.
 
     @Override
     public void startDocument() throws SAXException {
@@ -55,23 +55,23 @@ public class ParserXMLHandler extends DefaultHandler {
     }
 
     /*
-      * Fonction Ètant dÈclenchÈe lorsque le parser trouve un tag XML
-      * C'est cette mÈthode que nous allons utiliser pour instancier un nouveau feed
+      * Fonction étant déclenchée lorsque le parser trouve un tag XML
+      * C'est cette méthode que nous allons utiliser pour instancier un nouveau feed
       */
     @Override
     public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {
-        // Nous rÈinitialisons le buffer a chaque fois qu'il rencontre un item
+        // Nous réinitialisons le buffer a chaque fois qu'il rencontre un item
         buffer = new StringBuffer();
 
-        // Ci dessous, localName contient le nom du tag rencontrÈ
+        // Ci dessous, localName contient le nom du tag rencontré
 
-        // Nous avons rencontrÈ un tag ITEM, il faut donc instancier un nouveau feed
+        // Nous avons rencontré un tag ITEM, il faut donc instancier un nouveau feed
         if (localName.equalsIgnoreCase(ITEM)) {
             this.currentFeed = new Feed();
             inItem = true;
         }
 
-        // Vous pouvez dÈfinir des actions ‡ effectuer pour chaque item rencontrÈ
+        // Vous pouvez dèfinir des actions à effectuer pour chaque item rencontré
         if (localName.equalsIgnoreCase(TITLE)) {
             // Nothing to do
         }
@@ -90,11 +90,11 @@ public class ParserXMLHandler extends DefaultHandler {
     }
 
 
-    // * Fonction Ètant dÈclenchÈe lorsque le parser ‡ parsÈ
-    // * l'intÈrieur de la balise XML La mÈthode characters
-    // * a donc fait son ouvrage et tous les caractËre inclus
-    // * dans la balise en cours sont copiÈs dans le buffer
-    // * On peut donc tranquillement les rÈcupÈrer pour complÈter
+    // * Fonction étant déclenchée lorsque le parser à parsé
+    // * l'intèrieur de la balise XML La méthode characters
+    // * a donc fait son ouvrage et tous les caractères inclus
+    // * dans la balise en cours sont copiés dans le buffer
+    // * On peut donc tranquillement les récupèrer pour compléter
     // * notre objet currentFeed
 
     @Override
@@ -102,7 +102,7 @@ public class ParserXMLHandler extends DefaultHandler {
 
         if (localName.equalsIgnoreCase(TITLE)) {
             if (inItem) {
-                // Les caractËres sont dans l'objet buffer
+                // Les caractères sont dans l'objet buffer
                 this.currentFeed.setTitle(buffer.toString());
                 buffer = null;
             }
@@ -138,9 +138,9 @@ public class ParserXMLHandler extends DefaultHandler {
     }
 
     // * Tout ce qui est dans l'arborescence mais n'est pas partie
-    // * intÈgrante d'un tag, dÈclenche la levÈe de cet ÈvÈnement.
-    // * En gÈnÈral, cet ÈvÈnement est donc levÈ tout simplement
-    // * par la prÈsence de texte entre la balise d'ouverture et
+    // * intègrante d'un tag, déclenche la levée de cet évènement.
+    // * En général, cet évènement est donc levé tout simplement
+    // * par la présence de texte entre la balise d'ouverture et
     // * la balise de fermeture
 
     public void characters(char[] ch, int start, int length) throws SAXException {
@@ -149,7 +149,7 @@ public class ParserXMLHandler extends DefaultHandler {
     }
 
 
-    // cette mÈthode nous permettra de rÈcupÈrer les donnÈes
+    // cette méthode nous permettra de récupérer les données
     public ArrayList<Feed> getData() {
         return feeds;
     }

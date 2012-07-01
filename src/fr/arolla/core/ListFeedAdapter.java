@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class ListFeedAdapter extends BaseAdapter {
 
-    // les donnÈes ‡ afficher
+    // les données à afficher
     private ArrayList<Feed> feeds;
 
     // * Le LayoutInflater permet de parser un layout XML et de
@@ -28,10 +28,9 @@ public class ListFeedAdapter extends BaseAdapter {
 
     }
 
-    // * il nous faut spÈcifier la mÈthode "count()".
-    // * Cette mÈthode permet de connaÓtre le nombre d'items prÈsent
-    // * dans la liste. Dans notre cas, il faut donc renvoyer le nombre
-    // * de personnes contenus dans "mListP".
+    // * il nous faut spécifier la méthode "count()".
+    // * Cette méthode permet de connaître le nombre d'items présent
+    // * dans la liste.
 
     @Override
     public int getCount() {
@@ -57,12 +56,12 @@ public class ListFeedAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // * Le paramËtre "convertView" permet de recycler les Èlements
-        // * de notre liste. En effet, l'opÈration pour convertir un layout
-        // * XML en IHM standard est trËs couteuse pour la plateforme Android.
-        // * On nous propose ici de rÈutiliser des occurences crÈÈes qui ne sont
-        // * plus affichÈes. Donc si ce paramËtre est "null" alors, il faut "inflater"
-        // * notre layout XML, sinon on le rÈutilise
+        // * Le paramètre "convertView" permet de recycler les élements
+        // * de notre liste. En effet, l'opération pour convertir un layout
+        // * XML en IHM standard est très couteuse pour la plateforme Android.
+        // * On nous propose ici de réutiliser des occurences créées qui ne sont
+        // * plus affichées. Donc si ce paramètre est "null" alors, il faut "inflater"
+        // * notre layout XML, sinon on le réutilise
         FeedView fv;
 
         if (convertView == null) {
